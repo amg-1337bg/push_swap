@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamghoug <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 10:19:02 by bamghoug          #+#    #+#             */
-/*   Updated: 2019/11/01 07:49:02 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/16 11:12:40 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define H_LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-int					ft_atoi(const char *str);
+long long			ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 int					ft_isalnum(int c);

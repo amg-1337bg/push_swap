@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamghoug <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 10:39:21 by bamghoug          #+#    #+#             */
-/*   Updated: 2019/10/28 12:51:08 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/16 11:13:03 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int		i;
-	size_t	j;
+	long long	j;
 
 	i = 0;
 	j = 0;
