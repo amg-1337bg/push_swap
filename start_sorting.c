@@ -90,15 +90,15 @@ void	sort_stack(t_stack **a, t_stack **b, int time)
 	int stack_len;
 
 	i = 0;
-	stack_len = stack_length(*a);
 	while (time >= 0)
 	{
+		stack_len = stack_length(*a);
 		while (stack_len > 0)
 		{
-			if (!((*a)->index & (1 << i)))
-				pb(b, a);
-			else
+			if (((*a)->index & (1 << i)))
 				ra(a);
+			else
+				pb(b, a);
 			stack_len--;
 		}
 		while (*b)
@@ -106,25 +106,37 @@ void	sort_stack(t_stack **a, t_stack **b, int time)
 		time--;
 		i++;
 	}
-	
 }
+
+void	sort_two(t_stack **a)
+{
+	if ((*a)->num > (*a)->next->num)
+		sa(a);
+}
+
+// void	sort_under_five(t_stack **a, t_stack **b)
+// {
+
+// }
 
 void	start_sort(t_stack **a, t_stack **b)
 {
 	int len;
-	t_stack *tmp;
+	// t_stack *tmp;
 	int	time_to_loop;
 
 	len = stack_length(*a);
-	sort_in_arr(*a, len);
-	time_to_loop = looping(len);
-	sort_stack(a, b, time_to_loop);
-	tmp = *a;
-	while (tmp)
+	if (len < 2)
+		return ;
+	else if (len == 2)
+		sort_two(a);
+	// else if (len <= 5)
+	// 	sort_under_five(a, b);
+	else
 	{
-		printf("%lld\n", tmp->num);
-		tmp = tmp->next;
+		sort_in_arr(*a, len);
+		time_to_loop = looping(len);
+		sort_stack(a, b, time_to_loop);
+		*b = NULL;
 	}
-	
-	*b = NULL;
 }
