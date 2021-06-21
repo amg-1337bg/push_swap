@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:26:07 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/21 13:35:58 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/21 19:09:53 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,14 @@ void	start_sort(t_stack **a, t_stack **b)
 	{
 		sort_in_arr(*a, len);
 		time_to_loop = looping(len);
+		// printf("time = %d\n", time_to_loop);
 		sort_stack(a, b, time_to_loop);
 		*b = NULL;
 	}
+	// tmp = *a;
+	// while (tmp)
+	// {
+	// 	printf("%lld\n", tmp->num);
+	// 	tmp = tmp->next;
+	// }
 }

@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:58:37 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/21 12:45:20 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/21 19:04:53 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,12 @@ int main(int ac, char *av[])
     stackb = NULL;
     if (ac < 2)
         return (1);
-    else
+    ret = fill_stacka(&stacka, av);
+	if (ret == 1)
 	{
-        ret = fill_stacka(&stacka, av);
-		if (ret == 1)
-		{
-			write(1, "Error\n", 6);
-			return (ret);
-		}
-		start_sort(&stacka, &stackb);
+		write(1, "Error\n", 6);
+		return (ret);
 	}
+	start_sort(&stacka, &stackb);
     return (0);
 }
