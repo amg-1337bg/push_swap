@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 09:50:42 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/16 15:22:55 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/21 11:40:56 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
     long long num;
+	int	index;
     struct s_stack *next;
 }	t_stack;
 
@@ -33,6 +34,7 @@ int		is_valid(char *av, long long num);
 void	ft_free_list(t_stack **a);
 int		is_dup(t_stack *head, long long num);
 int		stack_length(t_stack *head);
+void	start_sort(t_stack **a, t_stack **b);
 // instructions
 
 void	sa(t_stack **a);

@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:58:37 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/16 18:59:28 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/21 11:25:48 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int ac, char *av[])
 {
     t_stack *stacka;
     t_stack *stackb;
-    t_stack *tmp;
+    // t_stack *tmp;
 	int		ret;
 
     stacka = NULL;
@@ -54,6 +54,7 @@ int main(int ac, char *av[])
 			write(1, "Error\n", 6);
 			return (ret);
 		}
+		start_sort(&stacka, &stackb);
 	}
     return (0);
 }

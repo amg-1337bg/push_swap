@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 09:50:37 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/16 15:28:44 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/21 11:30:09 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	add_to_list(t_stack **head, long long num)
 		return (1);
 	fill = malloc(sizeof(t_stack));
     fill->num = num;
+	fill->index = 0;
     fill->next = NULL;
 	tmp = last_node(*head);
 	if (tmp == NULL)
