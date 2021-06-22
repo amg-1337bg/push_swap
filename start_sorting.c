@@ -74,7 +74,7 @@ int	looping(int len)
 {
 	int i;
 
-	i = 7;
+	i = 16;
 	while (i >= 0)
 	{
 		if ((len & (1 << i)))
