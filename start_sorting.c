@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:26:07 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/21 19:09:53 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/22 11:19:42 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,36 +114,73 @@ void	sort_two(t_stack **a)
 		sa(a);
 }
 
-// void	sort_under_five(t_stack **a, t_stack **b)
-// {
+int	is_sorted(t_stack **a)
+{
+	t_stack	*first;
+	t_stack	*second;
 
-// }
+	first = *a;
+	while (first)
+	{
+		second = first;
+		while (second)
+		{
+			if (first->num > second->num)
+				return (1);
+			second = second->next;
+		}
+		first = first->next;
+	}
+	return (0);
+}
+
+void	sort_three(t_stack **a, int len)
+{
+	sort_in_arr(*a, len);
+	if ((*a)->index == 2 && (*a)->next->next->index == 0)
+	{
+		sa(a);
+		rra(a);
+	}
+	else if ((*a)->index == 2 && (*a)->next->index == 0)
+		ra(a);
+	else if ((*a)->index == 1 && (*a)->next->index == 0)
+		sa(a);
+	else if ((*a)->index == 0 && (*a)->next->index == 2)
+	{
+		sa(a);
+		ra(a);
+	}
+	else
+		rra(a);
+}
+
+void	sort_under_five(t_stack **a, t_stack **b, int len)
+{
+	
+}
 
 void	start_sort(t_stack **a, t_stack **b)
 {
 	int len;
-	// t_stack *tmp;
 	int	time_to_loop;
 
 	len = stack_length(*a);
+	if (is_sorted(a) == 0)	
+		return ;
 	if (len < 2)
 		return ;
 	else if (len == 2)
 		sort_two(a);
-	// else if (len <= 5)
-	// 	sort_under_five(a, b);
+	else if (len == 3)
+		sort_three(a, len);
+	else if (len <= 5)
+		sort_under_five(a, b, len);
 	else
 	{
 		sort_in_arr(*a, len);
 		time_to_loop = looping(len);
-		// printf("time = %d\n", time_to_loop);
 		sort_stack(a, b, time_to_loop);
 		*b = NULL;
 	}
-	// tmp = *a;
-	// while (tmp)
-	// {
-	// 	printf("%lld\n", tmp->num);
-	// 	tmp = tmp->next;
-	// }
 }

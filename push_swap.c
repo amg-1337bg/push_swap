@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:58:37 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/21 19:04:53 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/22 10:24:56 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int main(int ac, char *av[])
 		return (ret);
 	}
 	start_sort(&stacka, &stackb);
+	ft_free_list(&stacka);
     return (0);
 }
