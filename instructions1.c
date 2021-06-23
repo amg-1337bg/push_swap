@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:21:52 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/23 12:40:11 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 15:14:37 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	pb(t_stack **b, t_stack **a)
 	write(1, "pb\n", 3);
 }
 
-void	rra(t_stack **a)
+void	ra(t_stack **a)
 {
 	t_stack *last;
 	t_stack *tmp;
@@ -52,7 +52,7 @@ void	rra(t_stack **a)
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = NULL;
-	write(1, "rra\n", 4);
+	write(1, "ra\n", 3);
 }
 
 void	rrb(t_stack **b)
@@ -75,7 +75,7 @@ void	rr(t_stack **a, t_stack **b)
 	write(1, "rr\n", 3);
 }
 
-void	ra(t_stack **a)
+void	rra(t_stack **a)
 {
 	t_stack *last;
 	t_stack *b_last;
@@ -87,7 +87,7 @@ void	ra(t_stack **a)
 	b_last->next = NULL;
 	last->next = *a;
 	*a = last;
-	write(1, "ra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rb(t_stack **b)

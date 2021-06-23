@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:26:07 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/23 13:22:32 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 15:46:03 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,25 +140,25 @@ void	sort_three(t_stack **a, int len)
 	if ((*a)->index == 2 && (*a)->next->next->index == 0)
 	{
 		sa(a);
-		ra(a);
+		rra(a);
 	}
 	else if ((*a)->index == 2 && (*a)->next->index == 0)
-		rra(a);
+		ra(a);
 	else if ((*a)->index == 1 && (*a)->next->index == 0)
 		sa(a);
 	else if ((*a)->index == 0 && (*a)->next->index == 2)
 	{
 		sa(a);
-		rra(a);
+		ra(a);
 	}
 	else if ((*a)->index == 1 && (*a)->next->index == 2)
-		ra(a);
+		rra(a);
 }
 
 void	set_position(t_stack *a)
 {
 	int	i;
-	
+
 	i = 0;
 	while (a)
 	{
@@ -182,13 +182,13 @@ void	push_index(t_stack **a, t_stack **b, int index)
 		pb(b, a);
 	else if (tmp->position <= 2)
 	{
-		rra(a);
+		ra(a);
 		set_position(*a);
 		push_index(a, b, index);
 	}
 	else if (tmp->position > 2)
 	{
-		ra(a);
+		rra(a);
 		set_position(*a);
 		push_index(a, b, index);
 	}
@@ -210,17 +210,10 @@ void	push_two_small(t_stack **a, t_stack **b, int *len)
 void	sort_under_five(t_stack **a, t_stack **b, int len)
 {
 	int before;
-	t_stack *tmp;
 
 	before = len;
 	sort_in_arr(*a, len);
 	push_two_small(a, b, &len);
-	// tmp = *a;
-	// while (tmp)
-	// {
-	// 	printf("%lld\n", tmp->num);
-	// 	tmp = tmp->next;
-	// }
 	sort_three(a, len);
 	if (before == 4)
 		pa(a, b);
@@ -228,12 +221,6 @@ void	sort_under_five(t_stack **a, t_stack **b, int len)
 	{
 		pa(a, b);
 		pa(a, b);
-	}
-	tmp = *a;
-	while (tmp)
-	{
-		printf("%lld\n", tmp->num);
-		tmp = tmp->next;
 	}
 }
 
