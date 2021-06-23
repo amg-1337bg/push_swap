@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 09:50:42 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/21 11:40:56 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:56:10 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
 {
     long long num;
 	int	index;
+	int	position;
     struct s_stack *next;
 }	t_stack;
 

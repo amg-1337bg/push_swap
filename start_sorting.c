@@ -6,7 +6,7 @@
 /*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:26:07 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/22 11:19:42 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 12:16:15 by bamghoug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,13 +151,74 @@ void	sort_three(t_stack **a, int len)
 		sa(a);
 		ra(a);
 	}
-	else
+	else if ((*a)->index == 1 && (*a)->next->index == 2)
 		rra(a);
 }
 
+void	set_position(t_stack *a)
+{
+	int	i;
+	
+	i = 0;
+	while (a)
+	{
+		a->position = i++;
+		a = a->next;
+	}
+}
+
+void	push_index(t_stack **a, t_stack **b, int index)
+{
+	t_stack *tmp;
+
+	tmp = *a;
+	while (tmp)
+	{
+		if (tmp->index == index)
+			break ;
+		tmp = tmp->next;
+	}
+	if (tmp->position == 0)
+		pb(b, a);
+	else if (tmp->position < 2)
+	{
+		rra(a);
+		set_position(*a);
+		push_index(a, b, index);
+	}
+	else if (tmp->position >= 3)
+	{
+		ra(a);
+		set_position(*a);
+		push_index(a, b, index);
+	}
+}
+
+void	push_two_small(t_stack **a, t_stack **b, int len)
+{
+	int		index;
+
+	index = 0;
+	while(len > 3)
+	{
+		set_position(*a);
+		push_index(a, b, index);
+		len--;
+		index++;
+	}
+}
 void	sort_under_five(t_stack **a, t_stack **b, int len)
 {
-	
+	sort_in_arr(*a, len);
+	push_two_small(a, b, len);
+	sort_three(a, len);
+	if (len == 4)
+		pa(a, b);
+	else
+	{
+		pa(a, b);
+		pa(a, b);
+	}
 }
 
 void	start_sort(t_stack **a, t_stack **b)
