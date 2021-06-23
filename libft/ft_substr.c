@@ -20,9 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	ptr = (unsigned char*)s;
+	ptr = (unsigned char *)s;
 	i = 0;
-	p = (unsigned char*)malloc((len + 1) * sizeof(char));
+	p = (unsigned char *)malloc((len + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	if (start < ft_strlen(s))
@@ -36,5 +36,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 	}
 	p[i] = '\0';
-	return ((char*)p);
+	return ((char *)p);
 }

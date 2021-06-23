@@ -14,13 +14,13 @@
 
 long long	ft_atoi(const char *str)
 {
-	int		i;
+	int			i;
 	long long	j;
 
 	i = 0;
 	j = 0;
 	while (*str == 32 || *str == 9 || *str == 11
-			|| *str == 12 || *str == 13 || *str == 10)
+		|| *str == 12 || *str == 13 || *str == 10)
 		str++;
 	if (*str == '-' || *str == '+')
 	{

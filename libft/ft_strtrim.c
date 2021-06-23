@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int		trim_checker(char const *s1, char const *set, int i, int *index)
+int	trim_checker(char const *s1, char const *set, int i, int *index)
 {
-	int j;
-	int c;
+	int	j;
+	int	c;
 
 	j = 0;
 	while (s1[j] != '\0')
@@ -53,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = ft_strlen(s1);
 	j--;
 	length = trim_checker(s1, set, j, &index);
-	p = (char*)malloc((length + 2) * sizeof(char));
+	p = (char *)malloc((length + 2) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	j = 0;

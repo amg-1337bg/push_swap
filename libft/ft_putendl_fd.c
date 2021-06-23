@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	char endline;
+	char	endline;
 
 	endline = '\n';
 	if (s != NULL)

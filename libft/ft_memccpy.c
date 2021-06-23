@@ -20,9 +20,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t			i;
 
 	i = 0;
-	s = (unsigned char*)src;
-	d = (unsigned char*)dst;
-	cc = (unsigned char)c;
+	s = (unsigned char *)src;
+	d = dst;
+	cc = c;
 	while (i < n)
 	{
 		d[i] = s[i];

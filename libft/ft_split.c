@@ -14,11 +14,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int		hm_word(char const *s, char c)
+int	hm_word(char const *s, char c)
 {
-	int i;
-	int j;
-	int checker;
+	int	i;
+	int	j;
+	int	checker;
 
 	i = 0;
 	j = 0;
@@ -45,7 +45,7 @@ char	*hm_inword(char const *s, int word_len, int j)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	pt = (unsigned char*)malloc((word_len + 1) * sizeof(char));
+	pt = malloc((word_len + 1) * sizeof(char));
 	if (pt == NULL)
 		return (NULL);
 	t = j - word_len;
@@ -56,14 +56,14 @@ char	*hm_inword(char const *s, int word_len, int j)
 		t++;
 	}
 	pt[i] = '\0';
-	return ((char*)pt);
+	return ((char *)pt);
 }
 
 void	work(char const *s, unsigned char **p, char c, int i)
 {
-	int word_len;
-	int x;
-	int j;
+	int	word_len;
+	int	x;
+	int	j;
 
 	x = -1;
 	j = 0;
@@ -82,7 +82,7 @@ void	work(char const *s, unsigned char **p, char c, int i)
 			else
 				break ;
 		}
-		p[x] = (unsigned char*)hm_inword(s, word_len, j);
+		p[x] = (unsigned char *)hm_inword(s, word_len, j);
 		j++;
 	}
 	p[x] = NULL;
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	trim = ft_strtrim(s, &c);
 	i = hm_word(trim, c);
-	p = (unsigned char**)malloc((i + 2) * sizeof(char*));
+	p = malloc((i + 2) * sizeof(char *));
 	if (p == NULL)
 		return (NULL);
 	work(trim, p, c, i);

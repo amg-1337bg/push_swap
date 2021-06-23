@@ -26,7 +26,7 @@ char	*if_neg(int n)
 		n = n / 10;
 		i++;
 	}
-	c = (char*)malloc((i + 2) * sizeof(char));
+	c = malloc((i + 2) * sizeof(char));
 	if (c == NULL)
 		return (NULL);
 	i--;
@@ -55,7 +55,7 @@ char	*if_pos(int n)
 		n = n / 10;
 		i++;
 	}
-	c = (char*)malloc((i + 1) * sizeof(char));
+	c = malloc((i + 1) * sizeof(char));
 	if (c == NULL)
 		return (NULL);
 	i--;
@@ -72,11 +72,11 @@ char	*if_pos(int n)
 
 char	*ft_itoa(int n)
 {
-	char *c;
+	char	*c;
 
 	if (n >= 0 && n <= 9)
 	{
-		c = (char*)malloc(2 * sizeof(char));
+		c = malloc(2 * sizeof(char));
 		if (c == NULL)
 			return (NULL);
 		c[0] = n + '0';

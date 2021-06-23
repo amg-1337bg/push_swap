@@ -14,12 +14,12 @@
 
 char	*ft_strnstr(const char *hay, const char *n, size_t len)
 {
-	size_t		i;
-	size_t		j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (*n == '\0')
-		return ((char*)hay);
+		return ((char *)hay);
 	if (len == 0)
 		return (NULL);
 	while (hay[i] != '\0' && i < len)
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *hay, const char *n, size_t len)
 		{
 			j++;
 			if (n[j] == '\0')
-				return ((char*)&hay[i]);
+				return ((char *)&hay[i]);
 		}
 		i++;
 	}

@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
-	p = (char*)malloc((j + i + 1) * sizeof(char));
+	p = (char *)malloc((j + i + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	i = -1;
