@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 09:50:37 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/21 11:30:09 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 20:08:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ t_stack	*last_node(t_stack *head)
 
 int	add_to_list(t_stack **head, long long num)
 {
-	t_stack *fill;
-	t_stack *tmp;
+	t_stack	*fill;
+	t_stack	*tmp;
 	int		ret;
 
 	ret = is_dup(*head, num);
 	if (ret == 1)
 		return (1);
 	fill = malloc(sizeof(t_stack));
-    fill->num = num;
+	fill->num = num;
 	fill->index = 0;
-    fill->next = NULL;
+	fill->next = NULL;
 	tmp = last_node(*head);
 	if (tmp == NULL)
 		*head = fill;
@@ -46,7 +46,7 @@ int	add_to_list(t_stack **head, long long num)
 
 int	stack_length(t_stack *head)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (head)
@@ -59,8 +59,8 @@ int	stack_length(t_stack *head)
 
 void	ft_free_list(t_stack **a)
 {
-	t_stack *tmp;
-	t_stack *next;
+	t_stack	*tmp;
+	t_stack	*next;
 
 	tmp = *a;
 	while (tmp)
@@ -72,7 +72,7 @@ void	ft_free_list(t_stack **a)
 	*a = NULL;
 }
 
-t_stack *before_last(t_stack *head)
+t_stack	*before_last(t_stack *head)
 {
 	while (head)
 	{

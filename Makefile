@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/14 12:07:35 by bamghoug          #+#    #+#              #
-#    Updated: 2021/06/23 14:59:58 by bamghoug         ###   ########.fr        #
+#    Updated: 2021/06/23 20:33:56 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME = push_swap
 
 FLAGS = -Werror -Wextra -Wall
 
-SRCS = *.c
+SRCS = instructions.c instructions1.c linked_list.c \
+		push_swap.c sort.c start_sorting.c utils.c \
+		utils1.c utils2.c
 
 all : $(NAME)
 

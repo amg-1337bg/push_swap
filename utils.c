@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 10:16:45 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/16 13:09:46 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 20:15:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	zero_val(char *av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (av[0] == '-' || av[0] == '+' || av[0] == '0')
@@ -50,7 +50,7 @@ int	check_max_min(long long num)
 {
 	if (num < -2147483648 || num > 2147483647)
 		return (1);
-	return(0);
+	return (0);
 }
 
 int	is_valid(char *av, long long num)

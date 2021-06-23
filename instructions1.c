@@ -3,62 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   instructions1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamghoug <bamghoug@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:21:52 by bamghoug          #+#    #+#             */
-/*   Updated: 2021/06/23 15:14:37 by bamghoug         ###   ########.fr       */
+/*   Updated: 2021/06/23 20:07:12 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack **a, t_stack **b)
-{
-	t_stack *heada;
-	t_stack *headb;
-
-	if(*b == NULL)
-		return ;
-	heada = *a;
-	headb = *b;
-	*b = (*b)->next;
-	headb->next = heada;
-	*a = headb;
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_stack **b, t_stack **a)
-{
-	t_stack *heada;
-	t_stack *headb;
-
-	if(*a == NULL)
-		return ;
-	heada = *a;
-	headb = *b;
-	*a = (*a)->next;
-	heada->next = headb;
-	*b = heada;
-	write(1, "pb\n", 3);
-}
-
-void	ra(t_stack **a)
-{
-	t_stack *last;
-	t_stack *tmp;
-
-	last = last_node(*a);
-	last->next = *a;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = NULL;
-	write(1, "ra\n", 3);
-}
-
 void	rrb(t_stack **b)
 {
-	t_stack *last;
-	t_stack *tmp;
+	t_stack	*last;
+	t_stack	*tmp;
 
 	last = last_node(*b);
 	last->next = *b;
@@ -77,8 +34,8 @@ void	rr(t_stack **a, t_stack **b)
 
 void	rra(t_stack **a)
 {
-	t_stack *last;
-	t_stack *b_last;
+	t_stack	*last;
+	t_stack	*b_last;
 
 	if (stack_length(*a) < 2)
 		return ;
@@ -92,8 +49,8 @@ void	rra(t_stack **a)
 
 void	rb(t_stack **b)
 {
-	t_stack *last;
-	t_stack *b_last;
+	t_stack	*last;
+	t_stack	*b_last;
 
 	if (stack_length(*b) < 2)
 		return ;
